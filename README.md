@@ -24,7 +24,32 @@ The system is trained using **MovieLens** dataset, which includes:
 
 - **Movies metadata** (titles, genres, keywords, cast, crew).  
 - **User ratings** (implicit feedback from interactions).  
-- **Links between movie IDs and external databases** (TMDB & IMDB).  
+- **Links between movie IDs and external databases** (TMDB & IMDB).
+
+## 🖥️ Dashboard Features
+
+1. **User Selection**: Pick a user ID from a dropdown.  
+2. **Recently Rated Movies**: Displays up to 5 movies the user has rated.  
+3. **Top-K Recommendations**: Generate a **top-5** recommended list with predicted scores.  
+4. **DSER Architecture Visualization**: An expandable diagram showing how GMF, MLP, and Doc2Vec embeddings work together.
+
+The dashboard loads **precomputed** embeddings and model weights for **fast** user-based lookups.
+
+1. Run `precompute_dser.py` (offline script):
+   - Loads & preprocesses CSVs (e.g., `movies_metadata_preprocessed.csv`, `ratings_small.csv`, etc.).
+   - Trains Doc2Vec for user sequences & item content.
+   - Trains DSER (GMF + MLP) via negative sampling.
+   - **Saves** artifacts (like `user_docvec_map.pkl`, `dser_model_weights.pth`) to disk.
+     
+   ```bash
+   python precompute_dser.py
+   
+2. Run `dashboard.py` (offline script):
+   - A web browser tab (default: http://localhost:8501) will open.
+   - Choose a user ID, see 5 movies they rated, then click “Recommend” to get top-5 recommendations.
+     
+   ```bash
+   streamlit run dashboard.py
 
 ## 📖 Reference  
 
