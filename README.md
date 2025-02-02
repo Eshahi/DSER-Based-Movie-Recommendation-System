@@ -25,6 +25,7 @@ The system is trained using **MovieLens** dataset, which includes:
 - **Movies metadata** (titles, genres, keywords, cast, crew).  
 - **User ratings** (implicit feedback from interactions).  
 - **Links between movie IDs and external databases** (TMDB & IMDB).
+- **Downlaod from [here](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).**
 
 ## 🖥️ Dashboard Features
 
@@ -42,7 +43,7 @@ The dashboard loads **precomputed** embeddings and model weights for **fast** us
    - **Saves** artifacts (like `user_docvec_map.pkl`, `dser_model_weights.pth`) to disk.
      
    ```bash
-   python precompute_dser.py
+   python precompute.py
    
 2. Run `dashboard.py` (offline script):
    - A web browser tab (default: http://localhost:8501) will open.
