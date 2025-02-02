@@ -16,4 +16,26 @@ A **Deep-Sequential Embedding for Single-Domain Recommendation (DSER)-based** mo
 - **TensorFlow / Keras**  
 - **Gensim (Doc2Vec)**  
 - **NumPy & Pandas**  
-- **Scikit-Learn**  
+- **Scikit-Learn**
+
+## 📊 Dataset  
+
+The system is trained using **MovieLens** dataset, which includes:  
+
+- **Movies metadata** (titles, genres, keywords, cast, crew).  
+- **User ratings** (implicit feedback from interactions).  
+- **Links between movie IDs and external databases** (TMDB & IMDB).  
+
+## 📖 Reference  
+
+This project is based on the research paper:  
+
+> Minsung Hong, Chulmo Koo, Namho Chung, "DSER: Deep-Sequential Embedding for Single Domain Recommendation,"  
+> _Expert Systems With Applications_, Volume 208, 2022.  
+> [DOI: 10.1016/j.eswa.2022.118156](https://www.sciencedirect.com/science/article/pii/S0957417422013306)  
+
+## 🔥 Future Enhancements  
+
+- **Implementing Attention Mechanisms** for improved sequence modeling.  
+- **Extending to Multi-Domain Recommendations** (e.g., books, music).  
+- **Deploying the Model as a Web API** for real-time recommendations.  
